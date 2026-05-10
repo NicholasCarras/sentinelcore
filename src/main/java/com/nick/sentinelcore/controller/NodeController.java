@@ -5,27 +5,19 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.ArrayList;
 import java.util.List;
+import com.nick.sentinelcore.service.NodeService;
 
 @RestController
 public class NodeController {
 
-    // Endpoint for getting nodes
+    private NodeService nodeService;
+
+    public NodeController(NodeService nodeService) {
+        this.nodeService = nodeService;
+    }
 
     @GetMapping("/nodes")
-    public List<Node> node() {
-
-        // Placeholder nodes
-
-        Node alpha = new Node(1, "Alpha", "Online");
-        Node beta = new Node(2, "Beta", "Offline");
-        Node gamma = new Node(3, "Gamma", "Offline");
-
-        List<Node> nodeList = new ArrayList<>();
-
-        nodeList.add(alpha);
-        nodeList.add(beta);
-        nodeList.add(gamma);
-
-        return nodeList;
+    public List<Node> nodes() {
+        return nodeService.getAllNodes();
     }
 }
