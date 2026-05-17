@@ -8,7 +8,11 @@ public class Node {
     private String name;
     private String status;
 
-    // Constructor for node
+    // Constructors for node
+
+    public Node() {
+
+    }
 
     public Node(int id, String name, String status) {
         this.id = id;
@@ -28,5 +32,19 @@ public class Node {
 
     public String getStatus() {
         return status;
+    }
+
+    // Setters
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

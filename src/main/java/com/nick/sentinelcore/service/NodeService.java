@@ -10,19 +10,28 @@ import java.util.ArrayList;
 @Service
 public class NodeService {
 
-    public List<Node> getAllNodes() {
+    private List<Node> listOfNodes;
+
+    public NodeService() {
+        listOfNodes = new ArrayList<>();
+
+        // Default nodes
 
         Node alpha = new Node(1, "Alpha", "Online");
         Node beta = new Node(2, "Beta", "Offline");
         Node gamma = new Node(3, "Gamma", "Offline");
 
-        List<Node> nodeList = new ArrayList<>();
-
-        nodeList.add(alpha);
-        nodeList.add(beta);
-        nodeList.add(gamma);
-
-        return nodeList;
+        listOfNodes.add(alpha);
+        listOfNodes.add(beta);
+        listOfNodes.add(gamma);
     }
 
+    public List<Node> getAllNodes() {
+        return listOfNodes;
+    }
+
+    public Node addNode(Node node) {
+        listOfNodes.add(node);
+        return node;
+    }
 }

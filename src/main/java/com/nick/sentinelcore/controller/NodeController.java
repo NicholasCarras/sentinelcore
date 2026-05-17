@@ -1,9 +1,10 @@
 package com.nick.sentinelcore.controller;
 
 import com.nick.sentinelcore.model.Node;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
-import java.util.ArrayList;
+import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 import com.nick.sentinelcore.service.NodeService;
 
@@ -19,5 +20,10 @@ public class NodeController {
     @GetMapping("/nodes")
     public List<Node> nodes() {
         return nodeService.getAllNodes();
+    }
+
+    @PostMapping("/nodes")
+    public Node addNode(@RequestBody Node node) {
+        return nodeService.addNode(node);
     }
 }
