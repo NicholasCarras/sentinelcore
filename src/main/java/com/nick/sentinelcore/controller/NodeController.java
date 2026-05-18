@@ -29,4 +29,9 @@ public class NodeController {
     public Node nodeHeartBeat(@PathVariable int id) {
         return nodeService.recordHeartBeat(id);
     }
+
+    @GetMapping("/nodes/status-check")
+    public List<Node> nodeStatusCheck() {
+        return nodeService.checkNodeStatuses();
+    }
 }
