@@ -36,4 +36,15 @@ public class NodeService {
         listOfNodes.add(node);
         return node;
     }
+
+    public Node recordHeartBeat(int id) {
+        for (int i = 0; i < listOfNodes.size(); i++) {
+            if (listOfNodes.get(i).getId() == id) {
+                listOfNodes.get(i).setStatus("Online");
+                listOfNodes.get(i).setLastHeartBeat(LocalDateTime.now());
+                return listOfNodes.get(i);
+            }
+        }
+        return null;
+    }
 }
