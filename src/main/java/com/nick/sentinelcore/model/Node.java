@@ -1,4 +1,5 @@
 package com.nick.sentinelcore.model;
+import java.time.LocalDateTime;
 
 public class Node {
 
@@ -7,6 +8,7 @@ public class Node {
     private int id;
     private String name;
     private String status;
+    private LocalDateTime lastHeartBeat;
 
     // Constructors for node
 
@@ -14,10 +16,11 @@ public class Node {
 
     }
 
-    public Node(int id, String name, String status) {
+    public Node(int id, String name, String status, LocalDateTime now) {
         this.id = id;
         this.name = name;
         this.status = status;
+        this.lastHeartBeat = now;
     }
 
     // Getters
@@ -34,6 +37,8 @@ public class Node {
         return status;
     }
 
+    public LocalDateTime getLastHeartBeat() { return lastHeartBeat; }
+
     // Setters
 
     public void setId(int id) {
@@ -47,4 +52,6 @@ public class Node {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public void setLastHeartBeat(LocalDateTime now) { this.lastHeartBeat = now; }
 }

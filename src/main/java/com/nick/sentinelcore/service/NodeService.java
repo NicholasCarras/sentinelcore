@@ -2,6 +2,8 @@ package com.nick.sentinelcore.service;
 
 import com.nick.sentinelcore.model.Node;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -17,9 +19,9 @@ public class NodeService {
 
         // Default nodes
 
-        Node alpha = new Node(1, "Alpha", "Online");
-        Node beta = new Node(2, "Beta", "Offline");
-        Node gamma = new Node(3, "Gamma", "Offline");
+        Node alpha = new Node(1, "Alpha", "Online", LocalDateTime.now());
+        Node beta = new Node(2, "Beta", "Offline", LocalDateTime.now());
+        Node gamma = new Node(3, "Gamma", "Offline", LocalDateTime.now());
 
         listOfNodes.add(alpha);
         listOfNodes.add(beta);
