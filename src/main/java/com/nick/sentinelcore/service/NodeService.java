@@ -20,9 +20,9 @@ public class NodeService {
 
         // Default nodes
 
-        Node alpha = new Node(1, "Alpha", "Online", LocalDateTime.now());
-        Node beta = new Node(2, "Beta", "Offline", LocalDateTime.now());
-        Node gamma = new Node(3, "Gamma", "Offline", LocalDateTime.now());
+        Node alpha = new Node("Alpha", "Online", LocalDateTime.now());
+        Node beta = new Node("Beta", "Offline", LocalDateTime.now());
+        Node gamma = new Node("Gamma", "Offline", LocalDateTime.now());
 
         listOfNodes.add(alpha);
         listOfNodes.add(beta);

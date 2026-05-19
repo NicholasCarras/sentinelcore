@@ -1,11 +1,19 @@
 package com.nick.sentinelcore.model;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import java.time.LocalDateTime;
 
+@Entity
 public class Node {
 
     // Attributes
 
+    @Id
+    @GeneratedValue
     private int id;
+
     private String name;
     private String status;
     private LocalDateTime lastHeartBeat;
@@ -16,8 +24,7 @@ public class Node {
 
     }
 
-    public Node(int id, String name, String status, LocalDateTime now) {
-        this.id = id;
+    public Node(String name, String status, LocalDateTime now) {
         this.name = name;
         this.status = status;
         this.lastHeartBeat = now;
