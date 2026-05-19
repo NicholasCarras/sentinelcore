@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: sentinelcore-postgres
+    environment:
+      POSTGRES_DB: sentinelcore
+      POSTGRES_USER: sentineluser
+      POSTGRES_PASSWORD: sentinelpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - sentinelcore-data:/var/lib/postgresql/data
+
+volumes:
+  sentinelcore-data:
